@@ -3,6 +3,7 @@
 <head>
     <title>Chat</title>
     <link href="../Content/metro-bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="">
 </head>
 <body>
     <header>
@@ -49,12 +50,14 @@
                 }
             }
 
+            // send on enter
             $('#message').keydown(function(e) {
                 if (e.which == 13) {
                     sendMessage();
                 }
             });
 
+            // send on button click
             $('#send').click(function () {
                 sendMessage();
             });
