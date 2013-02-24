@@ -93,6 +93,49 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\less\wells.less" />
+    <Content Include="Content\less\variables.less" />
+    <Content Include="Content\less\utilities.less" />
+    <Content Include="Content\less\type.less" />
+    <Content Include="Content\less\tooltip.less" />
+    <Content Include="Content\less\thumbnails.less" />
+    <Content Include="Content\less\tables.less" />
+    <Content Include="Content\less\sprites.less" />
+    <Content Include="Content\less\scaffolding.less" />
+    <Content Include="Content\less\responsive-utilities.less" />
+    <Content Include="Content\less\responsive-navbar.less" />
+    <Content Include="Content\less\responsive-768px-979px.less" />
+    <Content Include="Content\less\responsive-767px-max.less" />
+    <Content Include="Content\less\responsive-1200px-min.less" />
+    <Content Include="Content\less\responsive.less" />
+    <Content Include="Content\less\reset.less" />
+    <Content Include="Content\less\progress-bars.less" />
+    <Content Include="Content\less\popovers.less" />
+    <Content Include="Content\less\pagination.less" />
+    <Content Include="Content\less\pager.less" />
+    <Content Include="Content\less\navs.less" />
+    <Content Include="Content\less\navbar.less" />
+    <Content Include="Content\less\modals.less" />
+    <Content Include="Content\less\mixins.less" />
+    <Content Include="Content\less\media.less" />
+    <Content Include="Content\less\layouts.less" />
+    <Content Include="Content\less\labels-badges.less" />
+    <Content Include="Content\less\hero-unit.less" />
+    <Content Include="Content\less\grid.less" />
+    <Content Include="Content\less\forms.less" />
+    <Content Include="Content\less\dropdowns.less" />
+    <Content Include="Content\less\component-animations.less" />
+    <Content Include="Content\less\code.less" />
+    <Content Include="Content\less\close.less" />
+    <Content Include="Content\less\carousel.less" />
+    <Content Include="Content\less\buttons.less" />
+    <Content Include="Content\less\button-groups.less" />
+    <Content Include="Content\less\breadcrumbs.less" />
+    <Content Include="Content\less\bootstrap.less" />
+    <Content Include="Content\less\alerts.less" />
+    <Content Include="Content\less\accordion.less" />
     <None Include="Properties\PublishProfiles\petegoosignalrtalk - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\petegoosignalrtalk - FTP %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\petegoosignalrtalk - FTP.pubxml" />
@@ -100,6 +143,7 @@
     <None Include="Properties\PublishProfiles\petegoosignalrtalk - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\petegoosignalrtalk - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.8.3.intellisense.js" />
+    <Content Include="Chat\Chat.html" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -162,8 +206,11 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="index.htm" />
     <Content Include="MoveShapeDemo\MoveShape.htm" />
     <Content Include="MoveShapeDemo\MoveShape.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
     <Content Include="Scripts\jquery-1.8.3.min.js" />
     <Content Include="Scripts\jquery-ui-1.10.0.js" />
@@ -174,6 +221,7 @@
     <Content Include="Scripts\jquery.color.svg-names-2.1.2.min.js" />
     <Content Include="Scripts\jquery.signalR-1.0.0.js" />
     <Content Include="Scripts\jquery.signalR-1.0.0.min.js" />
+    <Content Include="Scripts\less.min.js" />
     <Content Include="SignalR.Sample\SignalR.StockTicker.js" />
     <Content Include="SignalR.Sample\StockTicker.css" />
     <Content Include="SignalR.Sample\StockTicker.html" />
@@ -181,6 +229,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RegisterHubs.cs" />
+    <Compile Include="Chat\ChatPersistentConnection.cs" />
     <Compile Include="MoveShapeDemo\MoveShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignalR.Sample\AppStart.cs" />
@@ -196,6 +245,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Backups\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

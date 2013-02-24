@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>metro-bootstrap</id>
+    <version>2.2.2</version>
+    <title>metro-bootstrap: Twitter Bootstrap with Metro style</title>
+    <authors>TalksLab</authors>
+    <owners>TalksLab</owners>
+    <projectUrl>http://talkslab.github.com/metro-bootstrap/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>metro-bootstrap from TalksLab based on Twitter Bootstrap. Twitter Bootstrap with Metro style.</description>
+    <tags>twitter, bootstrap, css, metro, responsive, html5, talkslab</tags>
+    <dependencies>
+      <dependency id="Twitter.Bootstrap.Less" version="2.2.2.1" />
+    </dependencies>
+    <references />
+  </metadata>
+</package>
