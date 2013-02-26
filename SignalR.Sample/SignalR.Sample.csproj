@@ -269,6 +269,7 @@
     <Compile Include="MoveShapeDemo\MoveShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharedTodos\TodoController.cs" />
+    <Compile Include="SharedTodos\TodoNotificationConnection.cs" />
     <Compile Include="SignalR.Sample\AppStart.cs" />
     <Compile Include="SignalR.Sample\Stock.cs" />
     <Compile Include="SignalR.Sample\StockTicker.cs" />
