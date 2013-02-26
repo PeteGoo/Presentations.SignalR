@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Todos</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="../Content/metro-bootstrap.css" rel="stylesheet" />
+</head>
+<body style="margin: 5px">
+    <header>
+        <h1>Todo <small>sometime</small></h1>
+    </header>
+    <div>
+        <form data-bind="submit: addTodo" id="create-todo">
+            <input type="text" id="newTodoDescription" data-bind="value: newTodoText" placeholder="What's todo?"/>
+        </form>
+        <div class="well">
+            <ul id="todos" data-bind="foreach: todos, visible: todos().length > 0">
+                <li>
+                    <div>
+                        <div data-bind="css: { done: done }">
+                            <input type="checkbox" data-bind="checked: done" />
+                            <div data-bind="text: description"></div>
+                            <a href="#" data-bind="click: $parent.removeTodo"><i class="icon-remove"></i></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="../Scripts/jquery-1.8.3.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery.signalR-1.0.0.js" type="text/javascript"></script>
+    <script src="../Scripts/jquery-ui-1.10.0.js"></script>
+    <script src="../Scripts/knockout-2.2.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var connection = $.connection('/chat');
+
+            connection.received(function (data) {
+                $('#messages').prepend('<li>' + data + '</li>');
+            });
+            
+            function Todo(data) {
+                this.description = ko.observable(data.description);
+                this.done = ko.observable(data.done);
+            }
+            
+            function TodoListViewModel() {
+                // Data
+                var self = this;
+                self.todos = ko.observableArray([]);
+                self.newTodoText = ko.observable();
+                self.incompleteTodos = ko.computed(function () {
+                    return ko.utils.arrayFilter(self.todos(),
+						function (todo) {
+						    return !todo.done() && !todo._destroy;
+						});
+                });
+
+                self.completeTodos = ko.computed(function () {
+                    return ko.utils.arrayFilter(self.todos(),
+						function (todo) {
+						    return todo.done() && !todo._destroy;
+						});
+                });
+
+                self.refreshList = function() {
+                    $.getJSON("/api/Todo/", function (latestTodos) {
+                        self.todos($.map(latestTodos, function (item) {
+                            return new Todo(item);
+                        }));
+                    });
+                };
+                
+                // Operations
+                self.addTodo = function () {
+                    var newTodo = new Todo({ description: this.newTodoText() });
+                    self.todos.push(newTodo);
+                    $.ajax({
+                        type: 'POST',
+                        url: '/api/Todo/',
+                        contentType: 'application/json;charset=utf-8',
+                        data: ko.toJSON(newTodo),
+                        success: function () {
+
+                        }
+                    });
+                    self.newTodoText("");
+
+                };
+                
+                self.removeTodo = function (todo) { self.todos.destroy(todo); };
+
+                self.removeCompleted = function () {
+                    self.todos.destroyAll(self.completeTodos());
+                };
+                
+                //$('#newTodoDescription').keydown(function (e) {
+                //    if (e.which == 13) {
+                //        self.addTodo();
+                //    }
+                //});
+                /* Load the data */
+                //var mappedTodos = $.map(data, function (item) {
+                //    return new Todo(item);
+                //});
+
+                //self.todos(mappedTodos);
+                self.refreshList();
+            }
+
+            ko.applyBindings(new TodoListViewModel());
+
+            // send on enter
+
+            
+            connection.start();
+        });
+    </script>
+</body>
+</html>
