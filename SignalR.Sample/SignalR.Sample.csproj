@@ -128,9 +128,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Backups\Chat\Chat.html" />
-    <Content Include="Backups\MoveShapeDemo\MoveShape.htm" />
-    <Content Include="Backups\MoveShapeDemo\MoveShape.js" />
+    <Content Include="Completed\Chat\Chat.html" />
+    <Content Include="Completed\MoveShapeDemo\MoveShape.htm" />
+    <Content Include="Completed\MoveShapeDemo\MoveShape.js" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\less\wells.less" />
@@ -297,8 +297,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RegisterHubs.cs" />
-    <Compile Include="Backups\Chat\ChatPersistentConnection.cs" />
-    <Compile Include="Backups\MoveShapeDemo\MoveShape.cs" />
+    <Compile Include="Completed\Chat\ChatPersistentConnection.cs" />
+    <Compile Include="Completed\MoveShapeDemo\MoveShape.cs" />
     <Compile Include="Chat\ChatPersistentConnection.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
