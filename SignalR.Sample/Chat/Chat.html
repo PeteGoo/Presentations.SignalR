@@ -34,12 +34,13 @@
     <script src="../Scripts/jquery-ui-1.10.0.js"></script>
     <script type="text/javascript">
         $(function () {
-            var connection = $.connection('/chat');
+
+            var connection = $.connection("/chat");
 
             connection.received(function (data) {
                 $('#messages').prepend('<li>' + data + '</li>');
             });
-
+            
             function sendMessage() {
                 var username = $('#username').val();
                 if (!username) {
@@ -61,8 +62,9 @@
             $('#send').click(function () {
                 sendMessage();
             });
-            
+
             connection.start();
+
         });
     </script>
 </body>

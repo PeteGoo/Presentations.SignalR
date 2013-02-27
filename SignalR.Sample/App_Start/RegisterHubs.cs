@@ -12,6 +12,9 @@ namespace SignalR.StockTicker
     {
         public static void Start() {
             RouteTable.Routes.MapConnection<ChatPersistentConnection>("chat", "chat");
+
+
+
             RouteTable.Routes.MapConnection<TodoNotificationConnection>("todonotification", "todonotification");
             // Register the default hubs route: ~/signalr/hubs
             RouteTable.Routes.MapHubs();

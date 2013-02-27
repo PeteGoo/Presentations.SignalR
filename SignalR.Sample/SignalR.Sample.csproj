@@ -128,6 +128,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Backups\Chat\Chat.html" />
+    <Content Include="Backups\MoveShapeDemo\MoveShape.htm" />
+    <Content Include="Backups\MoveShapeDemo\MoveShape.js" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="Content\less\wells.less" />
@@ -266,7 +269,7 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
-    <Content Include="MoveShapeDemo\MoveShape.htm" />
+    <Content Include="MoveShapeDemo\MoveShape.html" />
     <Content Include="MoveShapeDemo\MoveShape.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -285,6 +288,7 @@
     <Content Include="Scripts\less.min.js" />
     <Content Include="Scripts\toastr-1.1.5.js" />
     <Content Include="Scripts\toastr-1.1.5.min.js" />
+    <Content Include="SharedTodos\todo.css" />
     <Content Include="SharedTodos\Todos.html" />
     <Content Include="SignalR.Sample\SignalR.StockTicker.js" />
     <Content Include="SignalR.Sample\StockTicker.css" />
@@ -293,6 +297,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RegisterHubs.cs" />
+    <Compile Include="Backups\Chat\ChatPersistentConnection.cs" />
+    <Compile Include="Backups\MoveShapeDemo\MoveShape.cs" />
     <Compile Include="Chat\ChatPersistentConnection.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -315,9 +321,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Backups\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

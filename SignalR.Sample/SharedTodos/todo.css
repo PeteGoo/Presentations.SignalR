@@ -1,0 +1,35 @@
+﻿body {
+}
+
+#todos {
+    list-style: none;
+}
+
+.todo {
+    display: block;
+    width: 400px
+}
+
+.check {
+    vertical-align: baseline
+}
+
+.todo-description {
+    
+    
+    font-family: 'Segoe UI Light', 'Helvetica Neue', 'Segoe UI', 'Segoe WP', sans-serif;
+    font-size: 19px;
+    font-weight: normal;
+    height: auto;
+    line-height: 24px;
+    text-transform: lowercase;
+    width: auto;
+    margin-top: 5px;
+}
+
+.todo-destroy {
+    vertical-align: baseline;
+    margin-right: 10px;
+    float: right;
+    
+}

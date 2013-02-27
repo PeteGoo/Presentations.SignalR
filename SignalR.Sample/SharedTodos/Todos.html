@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <link href="../Content/metro-bootstrap.css" rel="stylesheet" />
     <link href="../Content/toastr.min.css" rel="stylesheet" />
+    <link href="todo.css" rel="stylesheet" />
 </head>
 <body style="margin: 5px">
     <header>
@@ -17,12 +18,10 @@
         <div class="well">
             <ul id="todos" data-bind="foreach: todos, visible: todos().length > 0">
                 <li>
-                    <div>
-                        <div data-bind="css: { done: done }">
-                            <input type="checkbox" data-bind="checked: done" />
-                            <div data-bind="text: description"></div>
-                            <a href="#" data-bind="click: $parent.removeTodo"><i class="icon-remove"></i></a>
-                        </div>
+                    <div class="todo">                        
+                        <input type="checkbox" data-bind="checked: done" class="check"/>
+                        <span data-bind="text: description" class="todo-description"></span>
+                        <a href="#" data-bind="click: $parent.removeTodo" class="todo-destroy"><i class="icon-remove" ></i></a>
                     </div>
                 </li>
             </ul>
@@ -35,11 +34,7 @@
     <script src="../Scripts/toastr-1.1.5.min.js"></script>
     <script type="text/javascript">
         $(function () {
-            var connection = $.connection('/todonotification');
 
-            connection.received(function (data) {
-                toastr.info(data);
-            });
             
             function Todo(data) {
                 var self = this;
@@ -56,6 +51,13 @@
             }
             
             function TodoListViewModel() {
+                var connection = $.connection('/todonotification');
+
+                connection.received(function (data) {
+                    toastr.info(data);
+                    self.refreshList();
+                });
+                
                 // Data
                 var self = this;
                 self.todos = ko.observableArray([]);
@@ -110,11 +112,12 @@
                 };
                 
                 self.refreshList();
+                connection.start();
             }
 
             ko.applyBindings(new TodoListViewModel());
 
-            connection.start();
+            
         });
     </script>
 </body>
